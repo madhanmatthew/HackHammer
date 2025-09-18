@@ -115,7 +115,7 @@ app.post('/api/generate', async (req, res) => {
 
 async function generateLessonPlan(topic) {
     const apiKey = process.env.GOOGLE_API_KEY;
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
     
     // Define the schema for structured output
     const schema = {
