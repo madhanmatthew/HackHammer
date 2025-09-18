@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(45deg, #4f46e5, #7c3aed);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.main {
+    padding: 40px;
+}
+
+.input-section {
+    margin-bottom: 40px;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#topicInput {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#topicInput:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+#generateBtn {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #4f46e5, #7c3aed);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+}
+
+#generateBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+}
+
+#generateBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    color: #6b7280;
+}
+
+.spinner {
+    border: 4px solid #f3f4f6;
+    border-top: 4px solid #4f46e5;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.lesson-plan {
+    display: none;
+}
+
+.section {
+    margin-bottom: 40px;
+    padding: 30px;
+    background: #f8fafc;
+    border-radius: 16px;
+    border-left: 5px solid #4f46e5;
+}
+
+.section h2 {
+    color: #1f2937;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    font-size: 1.2rem;
+}
+
+.concept {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.concept h3 {
+    color: #4f46e5;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.analogy {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #10b981;
+}
+
+.quiz-question {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.question {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+.options {
+    list-style: none;
+}
+
+.option {
+    padding: 12px 15px;
+    margin: 8px 0;
+    background: #f9fafb;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+.option.selected {
+    background: #dbeafe;
+    border-color: #3b82f6;
+}
+
+.option.correct {
+    background: #dcfce7;
+    border-color: #16a34a;
+    color: #15803d;
+}
+
+.option.incorrect {
+    background: #fee2e2;
+    border-color: #dc2626;
+    color: #dc2626;
+}
+
+.feedback {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.feedback.correct {
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #16a34a;
+}
+
+.feedback.incorrect {
+    background: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #dc2626;
+}
+
+.reset-btn {
+    margin-top: 30px;
+    padding: 12px 24px;
+    background: #6b7280;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.reset-btn:hover {
+    background: #4b5563;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .main {
+        padding: 20px;
+    }
+    
+    .header {
+        padding: 30px 20px;
+    }
+}
