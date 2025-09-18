@@ -7,7 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="cover-page" id="coverPage">
+        <div class="cover-content">
+            <h1>Welcome to 🎓 LearnOS</h1>
+            <p>Please enter your name to continue</p>
+            <div class="input-group">
+                <input type="text" id="nameInput" placeholder="Your Name...">
+                <button id="startBtn">Start Learning</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="mainApp" style="display: none;">
         <div class="header">
             <h1>🎓 LearnOS</h1>
             <p>Generate 5-minute lesson plans on any topic instantly</p>
