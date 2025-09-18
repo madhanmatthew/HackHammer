@@ -6,6 +6,13 @@ class LearnOS {
     }
 
     initializeElements() {
+        // Cover Page Elements
+        this.coverPage = document.getElementById('coverPage');
+        this.nameInput = document.getElementById('nameInput');
+        this.startBtn = document.getElementById('startBtn');
+        this.mainApp = document.getElementById('mainApp');
+
+        // Main App Elements
         this.topicInput = document.getElementById('topicInput');
         this.generateBtn = document.getElementById('generateBtn');
         this.loading = document.getElementById('loading');
@@ -17,11 +24,30 @@ class LearnOS {
     }
 
     bindEvents() {
+        this.startBtn.addEventListener('click', () => this.startApp());
+        this.nameInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') this.startApp();
+        });
+
         this.generateBtn.addEventListener('click', () => this.generateLesson());
         this.topicInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.generateLesson();
         });
         this.resetBtn.addEventListener('click', () => this.resetQuiz());
+    }
+
+    startApp() {
+        const name = this.nameInput.value.trim();
+        if (!name) {
+            alert('Please enter your name to begin!');
+            return;
+        }
+
+        // You can optionally save the user's name to use later
+        // For example: localStorage.setItem('userName', name);
+        
+        this.coverPage.style.display = 'none';
+        this.mainApp.style.display = 'block';
     }
 
     async generateLesson() {
@@ -128,16 +154,12 @@ class LearnOS {
         const options = questionDiv.querySelectorAll('.option');
         const feedback = document.getElementById(`feedback-${questionIndex}`);
         
-        // Clear previous selections
         options.forEach(opt => opt.classList.remove('selected'));
         
-        // Mark selected option
         options[optionIndex].classList.add('selected');
         
-        // Check if correct
         const isCorrect = optionIndex === this.quizState[questionIndex].correctAnswer;
         
-        // Show feedback
         setTimeout(() => {
             if (isCorrect) {
                 options[optionIndex].classList.add('correct');
@@ -156,12 +178,10 @@ class LearnOS {
     }
 
     resetQuiz() {
-        // Reset all quiz states
         Object.keys(this.quizState).forEach(key => {
             this.quizState[key].answered = false;
         });
 
-        // Reset visual states
         document.querySelectorAll('.option').forEach(option => {
             option.classList.remove('selected', 'correct', 'incorrect');
         });
@@ -172,5 +192,5 @@ class LearnOS {
     }
 }
 
-// Initialize the app
 const app = new LearnOS();
+// Finalizing client-side logic
