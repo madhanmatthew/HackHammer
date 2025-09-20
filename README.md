@@ -48,7 +48,9 @@ Visit 👉 `http://localhost:3000`
 ```
 learnos/
 ├── server.js         # Backend (Express.js)
-├── public/index.html # Frontend
+├── public/index.html
+          /style.css
+          /script.js # Frontend
 ├── .env.example      # Env template
 └── README.md
 ```
