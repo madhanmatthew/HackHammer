@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnOS - 5-Minute Lesson Plans</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cover-page" id="coverPage">
+        <div class="cover-content">
+            <h1>Welcome to 🎓 LearnOS</h1>
+            <p>Please enter your name to continue</p>
+            <div class="input-group">
+                <input type="text" id="nameInput" placeholder="Your Name...">
+                <button id="startBtn">Start Learning</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="mainApp" style="display: none;">
+        <div class="header">
+            <h1>🎓 LearnOS</h1>
+            <p>Generate 5-minute lesson plans on any topic instantly</p>
+        </div>
+
+        <div class="main">
+            <div class="input-section">
+                <div class="input-group">
+                    <input type="text" id="topicInput" placeholder="Enter any topic you want to learn about..." />
+                    <button id="generateBtn">Generate Lesson</button>
+                </div>
+                <p style="color: #6b7280; font-size: 0.9rem;">Examples: "Quantum Physics", "How to bake bread", "Stock Market Basics"</p>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Creating your personalized lesson plan...</p>
+            </div>
+
+            <div class="lesson-plan" id="lessonPlan">
+                <div class="section">
+                    <h2><span class="icon">💡</span>Key Concepts</h2>
+                    <div id="concepts"></div>
+                </div>
+
+                <div class="section">
+                    <h2><span class="icon">🔗</span>Simple Analogies</h2>
+                    <div id="analogies"></div>
+                </div>
+
+                <div class="section">
+                    <h2><span class="icon">❓</span>Quick Quiz</h2>
+                    <div id="quiz"></div>
+                    <button class="reset-btn" id="resetQuiz" style="display: none;">Reset Quiz</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>LearnOS - Making learning accessible, one lesson at a time</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
